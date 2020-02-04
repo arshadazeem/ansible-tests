@@ -47,28 +47,29 @@ Ansible modules are reusable, standalone scripts that can be used by the Ansible
 	3. Install Ansible for Azure modules
 	4. Create Service Principal in Azure (Create an App Registation, Give the app permissions to your Azure Subscription).
 	5. Copy the Service Principal Client Id, Tenant Id, Azure Subscription Id, and Client Secret 
-*
+
 ```
 
-sudo pip install ansible[azure]
-ansible-galaxy install azure.azure_preview_modules
-cat ~/.ansible/roles/azure.azure_preview_modules/files/requirements-azure.txt
-wget https://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz
-tar xzvf ansible-tower-setup-latest.tar.gz
-cd ansible-tower-setup-3.6.2-1/
-vi inventory
-sudo ./setup.sh
-ansible-tower-service status
-mkdir ansible-scripts
-cd ansible-scripts/
-vi vmss-create.yaml
+- sudo pip install ansible[azure]
+- ansible-galaxy install azure.azure_preview_modules
+- cat ~/.ansible/roles/azure.azure_preview_modules/files/requirements-azure.txt
+- wget https://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz
+- tar xzvf ansible-tower-setup-latest.tar.gz
+- cd ansible-tower-setup-3.6.2-1/
+- vi inventory
+- sudo ./setup.sh
+- ansible-tower-service status
+- mkdir ansible-scripts
+- cd ansible-scripts/
+- vi vmss-create.yaml
    (*add playbook tasks)
-vi credentials
+- vi credentials
    (*add Service Principal Credentials)
 
-export AZURE_SUBSCRIPTION_ID=<your-subscription_id>
-export AZURE_CLIENT_ID=<security-principal-appid>
-export AZURE_SECRET=<security-principal-password>
-export AZURE_TENANT=<security-principal-tenant>
-ansible-playbook-2.7 vmss-create.yaml
+- export AZURE_SUBSCRIPTION_ID=<your-subscription_id>
+- export AZURE_CLIENT_ID=<security-principal-appid>
+- export AZURE_SECRET=<security-principal-password>
+- export AZURE_TENANT=<security-principal-tenant>
+
+- ansible-playbook-2.7 vmss-create.yaml
 ```

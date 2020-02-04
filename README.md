@@ -18,7 +18,7 @@ Ansible Roles
 	• They are not playbooks, but modularized components that follow a particular dir structure
 
 Ansible Modules
-Ansible modules are reusable, standalone scripts that can be used by the Ansible API, or by the ansible or ansible-playbook programs. 
+Ansible modules are reusable, standalone scripts that can be used by the Ansible API, or by the ansible or ansible-playbook programs. 
 
 SKUs - Ansible Engine vs Ansible Tower
 	• Ansible Engine is the engine/runtime that supports Ansible

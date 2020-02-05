@@ -1,0 +1,6 @@
+- hosts: azure-vms
+  tasks:
+  - name: Create file
+    file:
+      path: ~/ansible-test
+      state: touch
